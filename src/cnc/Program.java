@@ -1,5 +1,6 @@
 package cnc;
 
+import cnc.commands.AbstractCommand;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.LinkedList;

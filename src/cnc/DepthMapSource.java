@@ -13,11 +13,11 @@ public class DepthMapSource extends AbstractSource
 
   private final BufferedImage bufferedImage;
 
-  protected DepthMapSource(Area workArea, Speed speed, Tool tool, InputStream inputStream, double precision) throws IOException
+  protected DepthMapSource(Area workArea, Speed speed, Tool tool, InputStream inputStream) throws IOException
   {
-    super(workArea, speed, tool, precision);
-    int newWidth = (int) Math.round(workArea.getWidth() * precision);
-    int newHeight = (int) Math.round(workArea.getHeight() * precision);
+    super(workArea, speed, tool);
+    int newWidth = (int) Math.round(workArea.getWidth() * getPrecision());
+    int newHeight = (int) Math.round(workArea.getHeight() * getPrecision());
     bufferedImage = ImageUtil.resizeImage(ImageIO.read(inputStream), newWidth, newHeight);
   }
 
