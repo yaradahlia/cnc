@@ -1,12 +1,12 @@
 package cnc;
 
-public class Point
+public class Point // FIXME Iacob check if this is needed
 {
-  private final double x;
-  private final double y;
-  private final double z;
+  private final int x;
+  private final int y;
+  private final int z;
 
-  public Point(double x, double y, double z)
+  public Point(int x, int y, int z)
   {
     this.x = x;
     this.y = y;

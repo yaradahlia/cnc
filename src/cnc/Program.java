@@ -1,9 +1,7 @@
 package cnc;
 
-import cnc.commands.AbstractCommand;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.LinkedList;
 import java.util.List;
 
 @lombok.Getter
@@ -33,8 +31,6 @@ public class Program
 
   public List<AbstractCommand> generateProgram()
   {
-    List<AbstractCommand> commands = new LinkedList<>();
-    // FIXME Iacob work here
-    return commands;
+    return new CommandGenerator(source).generateCommands();
   }
 }

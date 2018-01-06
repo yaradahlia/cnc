@@ -1,5 +1,6 @@
 package cnc.commands;
 
+import cnc.AbstractCommand;
 import lombok.Getter;
 import types.WorkUnitsType;
 
@@ -11,6 +12,12 @@ public class WorkUnits extends AbstractCommand
   public WorkUnits(WorkUnitsType workUnitsType)
   {
     this.workUnitsType = workUnitsType;
+  }
+
+  @Override
+  public String getGCodeValue()
+  {
+    return WorkUnitsType.INCH.equals(getWorkUnitsType()) ? "G20" : "G21";
   }
 
 }

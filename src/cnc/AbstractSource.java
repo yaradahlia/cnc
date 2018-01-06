@@ -69,7 +69,7 @@ public abstract class AbstractSource
 
   public abstract double getPointDepth(double value);
 
-  public abstract Point getPoint(double x, double y);
+  public abstract int getValue(int x, int y);
 
   public abstract int getWidth();
 

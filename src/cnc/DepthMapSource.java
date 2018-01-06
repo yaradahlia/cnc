@@ -33,9 +33,9 @@ public class DepthMapSource extends AbstractSource
   }
 
   @Override
-  public Point getPoint(double x, double y)
+  public int getValue(int x, int y)
   {
-    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    return bufferedImage.getRGB(x, y);
   }
 
   @Override

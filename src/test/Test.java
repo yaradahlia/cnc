@@ -15,11 +15,12 @@ public class Test
 
   public static void main(String[] args) throws IOException
   {
-    Area workArea = new Area(3000, 3000, 20);
+    Area workArea = new Area(300, 300, 20);
     Speed speed = new Speed(0.3, 15000, 7500, 20000);
     Tool tool = new Tool(2.5, 3.5);
     Program program = new Program("Test", MeasureUnitType.MM, workArea, speed, tool, ResourceUtil.getResource(TEST_IMAGE));
-    ((DepthMapSource) program.getSource()).test();
+
+    //((DepthMapSource) program.getSource()).test();
   }
 
 }
