@@ -1,29 +1,17 @@
 package cnc.commands;
 
-import cnc.AbstractCommand;
-import lombok.Getter;
-
-@Getter
-public class LinearFastMove extends AbstractCommand
+public class LinearFastMove extends LinearMove
 {
+  private static final String GCODE = "G0";
 
-  private static final String GCODE = "G0 X %.2f Y %.2f Z %.2f";
-
-  private final double x;
-  private final double y;
-  private final double z;
-
-  public LinearFastMove(double x, double y, double z)
+  public LinearFastMove(Double x, Double y, Double z)
   {
-    this.x = x;
-    this.y = y;
-    this.z = z;
+    super(x, y, z);
   }
 
   @Override
-  public String getGCodeValue()
+  public String getGInstruction()
   {
-    return String.format(GCODE, getX(), getY(), getZ());
+    return GCODE;
   }
-
 }

@@ -18,8 +18,9 @@ public class Program
   private final Speed speed;
   private final Tool tool;
   private final AbstractSource source;
+  private final double safeZ;
 
-  public Program(String name, MeasureUnitType measureUnitType, Area workArea, Speed speed, Tool tool, InputStream source) throws IOException
+  public Program(String name, MeasureUnitType measureUnitType, Area workArea, Speed speed, Tool tool, InputStream source, double safeZ) throws IOException
   {
     this.name = name;
     this.measureUnitType = measureUnitType;
@@ -27,10 +28,11 @@ public class Program
     this.speed = speed;
     this.tool = tool;
     this.source = AbstractSource.get(workArea, speed, tool, source);
+    this.safeZ = safeZ;
   }
 
   public List<AbstractCommand> generateProgram()
   {
-    return new CommandGenerator(source).generateCommands();
+    return new CommandGenerator(this).generateCommands();
   }
 }

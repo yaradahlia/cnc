@@ -18,7 +18,7 @@ public class Test
     Area workArea = new Area(300, 300, 20);
     Speed speed = new Speed(0.3, 15000, 7500, 20000);
     Tool tool = new Tool(2.5, 3.5);
-    Program program = new Program("Test", MeasureUnitType.MM, workArea, speed, tool, ResourceUtil.getResource(TEST_IMAGE));
+    Program program = new Program("Test", MeasureUnitType.MM, workArea, speed, tool, ResourceUtil.getResource(TEST_IMAGE), 10);
 
     //((DepthMapSource) program.getSource()).test();
   }

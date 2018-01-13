@@ -1,6 +1,6 @@
 package cnc.commands;
 
-public class MoveToWorkOrigin extends LinearFastMove
+public class MoveToWorkOrigin extends LinearMove
 {
 
   public MoveToWorkOrigin()
