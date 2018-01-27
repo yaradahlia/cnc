@@ -67,6 +67,21 @@ public abstract class AbstractSource
     return prec;
   }
 
+  public double getMMPosition(int sourcePosition)
+  {
+    return sourcePosition * getPrecision();
+  }
+
+  public int getSourcePosition(double mmPosition)
+  {
+    return new Long(Math.round(mmPosition / getPrecision())).intValue();
+  }
+
+  public double getDepthAt(double x, double y)
+  {
+    return getPointDepth(getValue(getSourcePosition(x), getSourcePosition(y)));
+  }
+
   public abstract double getPointDepth(double value);
 
   public abstract int getValue(int x, int y);

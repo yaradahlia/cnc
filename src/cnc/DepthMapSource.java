@@ -16,8 +16,8 @@ public class DepthMapSource extends AbstractSource
   protected DepthMapSource(Area workArea, Speed speed, Tool tool, InputStream inputStream) throws IOException
   {
     super(workArea, speed, tool);
-    int newWidth = (int) Math.round(workArea.getWidth() * getPrecision());
-    int newHeight = (int) Math.round(workArea.getHeight() * getPrecision());
+    int newWidth = (int) Math.round(workArea.getWidth() / getPrecision());
+    int newHeight = (int) Math.round(workArea.getHeight() / getPrecision());
     bufferedImage = ImageUtil.resizeImage(ImageIO.read(inputStream), newWidth, newHeight);
   }
 
@@ -41,13 +41,13 @@ public class DepthMapSource extends AbstractSource
   @Override
   public int getWidth()
   {
-    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    return bufferedImage.getWidth();
   }
 
   @Override
   public int getHeight()
   {
-    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    return bufferedImage.getHeight();
   }
 
   // FIXME Iacob clean here

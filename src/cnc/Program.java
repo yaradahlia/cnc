@@ -3,6 +3,7 @@ package cnc;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
+import types.PathType;
 
 @lombok.Getter
 
@@ -19,8 +20,9 @@ public class Program
   private final Tool tool;
   private final AbstractSource source;
   private final double safeZ;
+  private final PathType pathType;
 
-  public Program(String name, MeasureUnitType measureUnitType, Area workArea, Speed speed, Tool tool, InputStream source, double safeZ) throws IOException
+  public Program(String name, MeasureUnitType measureUnitType, Area workArea, Speed speed, Tool tool, InputStream source, double safeZ, PathType pathType) throws IOException
   {
     this.name = name;
     this.measureUnitType = measureUnitType;
@@ -29,9 +31,10 @@ public class Program
     this.tool = tool;
     this.source = AbstractSource.get(workArea, speed, tool, source);
     this.safeZ = safeZ;
+    this.pathType = pathType;
   }
 
-  public List<AbstractCommand> generateProgram()
+  public List<AbstractCommand> generateProgram() throws AbstractPath.WorkAreaTooSmallException
   {
     return new CommandGenerator(this).generateCommands();
   }

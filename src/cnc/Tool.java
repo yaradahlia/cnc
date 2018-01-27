@@ -14,4 +14,8 @@ public class Tool
     this.toolWorkHeight = toolWorkHeight;
   }
 
+  public double getHalfOfDiameter()
+  {
+    return getToolDiameter() / 2;
+  }
 }

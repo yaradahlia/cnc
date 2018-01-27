@@ -1,12 +1,15 @@
 package cnc;
 
-public class Point // FIXME Iacob check if this is needed
-{
-  private final int x;
-  private final int y;
-  private final int z;
+import lombok.Getter;
 
-  public Point(int x, int y, int z)
+@Getter
+public class Point
+{
+  private final double x;
+  private final double y;
+  private final double z;
+
+  public Point(double x, double y, double z)
   {
     this.x = x;
     this.y = y;
