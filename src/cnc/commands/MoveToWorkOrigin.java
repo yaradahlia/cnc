@@ -8,4 +8,9 @@ public class MoveToWorkOrigin extends LinearFastMove
     super(0.0D, 0.0D, 0.0D);
   }
 
+  public MoveToWorkOrigin(double safeZ)
+  {
+    super(0.0D, 0.0D, safeZ);
+  }
+
 }

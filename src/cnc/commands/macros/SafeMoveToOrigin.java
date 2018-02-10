@@ -29,6 +29,7 @@ public class SafeMoveToOrigin extends AbstractMacro
   {
     List<AbstractCommand> commands = new LinkedList<>();
     commands.addAll(new ZWorkMove(currentX, currentY, safeZ, speed).getCommands());
+    commands.add(new MoveToWorkOrigin(safeZ));
     commands.add(new MoveToWorkOrigin());
     return commands;
   }
