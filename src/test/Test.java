@@ -1,17 +1,17 @@
 package test;
 
-import cnc.AbstractCommand;
-import cnc.AbstractPath;
-import cnc.Area;
-import cnc.DepthMapSource;
-import cnc.MeasureUnitType;
-import cnc.Program;
-import cnc.Speed;
-import cnc.Tool;
+import yar.cnc.AbstractCommand;
+import yar.cnc.AbstractPath;
+import yar.cnc.Area;
+import yar.cnc.DepthMapSource;
+import yar.cnc.MeasureUnitType;
+import yar.cnc.Program;
+import yar.cnc.Speed;
+import yar.cnc.Tool;
 import java.io.IOException;
 import java.util.List;
-import types.PathType;
-import util.ResourceUtil;
+import yar.types.PathType;
+import yar.util.ResourceUtil;
 
 public class Test
 {
